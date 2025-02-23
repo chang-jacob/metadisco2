@@ -35,12 +35,12 @@ set_metadisco_hyperparameters <- function(metadisco, r, colocalization_type = "c
   metadisco@details$hyperparameters$tau_estimator <- tau_estimator
 
   for(i in seq_along(metadisco@group1_spomics)) {
-    metadisco@group1_spomics[[i]] <- set_spomic_hyperparameters(spomic = metadisco@group1_spomics[[i]],
+    metadisco@group1_spomics[[i]] <- spomic::set_spomic_hyperparameters(spomic = metadisco@group1_spomics[[i]],
                                                                 r = r,
                                                                 colocalization_type = colocalization_type)
   }
   for(i in seq_along(metadisco@group2_spomics)) {
-    metadisco@group2_spomics[[i]] <- set_spomic_hyperparameters(spomic = metadisco@group2_spomics[[i]],
+    metadisco@group2_spomics[[i]] <- spomic::set_spomic_hyperparameters(spomic = metadisco@group2_spomics[[i]],
                                                                 r = r,
                                                                 colocalization_type = colocalization_type)
   }
