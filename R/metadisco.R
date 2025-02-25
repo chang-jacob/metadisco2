@@ -91,7 +91,8 @@ run_random_effects_meta_analysis <- function(kcross_distributions, method) {
     coefficients <- coef(summary(model))
     pooled_estimates[[pair]] <- data.frame(i_j = pair,
                                            colocalization_estimate = coefficients$estimate,
-                                           colocalization_variance = length(yi)*coefficients$se^2,
+                                           # colocalization_variance = length(yi)*coefficients$se^2,
+                                           colocalization_variance = coefficients$se^2,
                                            colocalization_se = coefficients$se)
   }
   return(dplyr::bind_rows(pooled_estimates))
